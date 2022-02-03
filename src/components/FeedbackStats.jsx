@@ -19,7 +19,10 @@ function FeedbackStats({feedback}) {
 FeedbackStats.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
+      ]),
       text: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
     })
